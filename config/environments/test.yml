@@ -1,0 +1,36 @@
+secret_key_base: 5u_KoJocal46HAzbm9q7k5Y7_3wnp9I1v8XEw4I0xiY
+port: 3000
+name: example_amber_hello
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
+host: 0.0.0.0
+port_reuse: false
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
+redis_url: "redis://localhost:6379"
+database_url: postgres://postgres:@localhost:5432/example_amber_hello_test
+session:
+  key: amber.session
+  store: signed_cookie
+  expires: 0
+smtp:
+  enabled: false
+
+secrets:
+  description: Store your development secrets credentials and settings here.
+
+
